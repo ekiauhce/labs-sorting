@@ -127,7 +127,7 @@ public class Plot extends JFrame {
         jb3.addActionListener(e -> {
             Benchmarking bench;
             try {
-                bench = new Benchmarking(Radix::sort, jb3.getText(),
+                bench = new Benchmarking(Counting::sort, jb3.getText(),
                     Integer.parseInt(minNField.getText()),
                     Integer.parseInt(maxNField.getText()),
                     Integer.parseInt(deltaNField.getText()),

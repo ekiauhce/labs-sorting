@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Radix {
+public class Counting {
     private static final int[] freq = new int[5001];
 
     public static void sort(int[] a) {
