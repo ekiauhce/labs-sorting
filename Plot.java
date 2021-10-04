@@ -123,6 +123,26 @@ public class Plot extends JFrame {
         });
         buttonsPanel.add(jb2);
     
+        JButton jb3 = new JButton("counting");
+        jb3.addActionListener(e -> {
+            Benchmarking bench;
+            try {
+                bench = new Benchmarking(Radix::sort, jb3.getText(),
+                    Integer.parseInt(minNField.getText()),
+                    Integer.parseInt(maxNField.getText()),
+                    Integer.parseInt(deltaNField.getText()),
+                    Integer.parseInt(itersField.getText())
+                );
+            } catch (RuntimeException ex) {
+                bench = new Benchmarking(Quick::sort, jb3.getText());
+            }
+            bench.run();
+
+            updateSeries(jb3.getText());
+            chartPanel.repaint();
+        });
+        buttonsPanel.add(jb3);
+
         add(buttonsPanel);
         
         pack();
