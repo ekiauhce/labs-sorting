@@ -95,6 +95,10 @@ public class Plot extends JFrame {
         createSortingButton("selection");
         createSortingButton("quick");
         createSortingButton("counting");
+        createSortingButton("insertion");
+        createSortingButton("bubble");
+        createSortingButton("heap");
+        createSortingButton("merge");
 
         add(buttonsPanel);
         
@@ -108,6 +112,10 @@ public class Plot extends JFrame {
         nameToMethod.put("selection", Selection::sort);
         nameToMethod.put("counting", Counting::sort);
         nameToMethod.put("quick", Quick::sort);
+        nameToMethod.put("insertion", Insertion::sort);
+        nameToMethod.put("bubble", Bubble::sort);
+        nameToMethod.put("heap", Heap::sort);
+        nameToMethod.put("merge", Merge::sort);
     }
 
     private void createSortingButton(String name) {
